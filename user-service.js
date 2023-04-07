@@ -73,7 +73,7 @@ module.exports.checkUser = function (userData) {
                     }
                 });
             }).catch(err => {
-                reject("Unable to find user " + userData.userName);
+                reject("Unable to find user '" + userData.userName + "'");
             });
     });
 };
