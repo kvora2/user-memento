@@ -74,7 +74,6 @@ app.post("/api/user/login", (req, res) => {
 });
 
 app.get("/api/user/favourites",passport.authenticate('jwt', { session: false }), (req, res) => {
-    console.log("inside");
     userService.getFavourites(req.user._id)
     .then(data => {
         res.json(data);
