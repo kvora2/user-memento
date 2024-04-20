@@ -85,6 +85,11 @@ app.get("/api/user/favourites",passport.authenticate('jwt', { session: false }),
 
 });
 
+app.get("/", (req, res) => {
+    res.json({ "message": "Yo bro, wass up!" });
+}
+);
+
 app.put("/api/user/favourites/:id",passport.authenticate('jwt', { session: false }), (req, res) => {
     userService.addFavourite(req.user._id, req.params.id)
     .then(data => {
