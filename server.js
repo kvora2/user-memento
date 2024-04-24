@@ -138,9 +138,12 @@ app.delete("/api/user/history/:id",passport.authenticate('jwt', { session: false
 
 userService.connect()
 .then(() => {
+    // Start the server, for local env
     app.listen(HTTP_PORT, () => { console.log("API listening on: " + HTTP_PORT) });
 })
 .catch((err) => {
     console.log("unable to start the server: " + err);
     process.exit();
 });
+
+module.exports = app; // for deployed server
