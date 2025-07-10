@@ -14,6 +14,9 @@ app.use(express.json());
 app.use(cors({
     origin: "https://vintagewonders.vercel.app",
     credentials: true
+}, {
+    origin: "http://localhost:3000",
+    credentials: true
 }));
 
 // eg
