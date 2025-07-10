@@ -4,7 +4,11 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/server.js"
+      "dest": "./server.js",
+      "headers": {
+        "Access-Control-Allow-Origin": "https://vintagewonders.vercel.app",
+        "Access-Control-Allow-Credentials": "true"
+      }
     }
   ]
 }
